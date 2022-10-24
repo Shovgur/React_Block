@@ -7,6 +7,9 @@ import UserName from "./Components/UserName";
 //@ts-ignore
 import styles from "./App.module.css";
 import Input from "./Components/Input";
+import { editableInputTypes } from "@testing-library/user-event/dist/utils";
+import { InputTypes } from "./Components/Input/Input";
+
 
 enum Tabs {
   All = "all",
@@ -85,14 +88,23 @@ const App = () => {
         })}
       </div>
       <Input
+        type = {InputTypes.Default}
         value={inputValue}
         onChange={onChange}
         placeholder={"Вот он"}
-        // disabled={false}
-        // title={"Какое-то название инпута"}
-        // error={"Error text"}
       />
-      <div>{inputValue}</div>
+      <Input
+        type = {InputTypes.Disable}
+        value={inputValue}
+        onChange={onChange}
+        placeholder={"Вот он"}
+      />
+      <Input
+        type = {InputTypes.Error}
+        value={inputValue}
+        onChange={onChange}
+        placeholder={"Вот он"}
+      />
     </div>
   );
 };

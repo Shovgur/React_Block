@@ -1,43 +1,44 @@
 import React, { FC, ChangeEvent } from "react";
-
+import classNames from "classnames";
 //@ts-ignore
-import styles from "Input.module.css";
+import styles from "./Input.module.css";
+import { type } from "os";
+
+export enum InputTypes {
+  Default = "default",
+  Disable = "disable",
+  Error = "error",
+}
 
 type InputProps = {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   disabled?: boolean;
-  title?: string;
   error?: string;
+  title?: string;
+  type: InputTypes;
 };
 
-const Input: FC<InputProps> = ({
-  value,
-  onChange,
-  placeholder,
-  disabled,
-  title,
-  error,
-}) => {
+const Input: FC<InputProps> = (props) => {
+  const { value, onChange, placeholder, disabled, error, title } = props;
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
 
   return (
     <div>
-      {title && <div>{title}</div>}
+      {title && <div className={styles.title}>{title}</div>}
       <input
+        className={classNames(styles.input, { [styles.inputError]: error })}
         value={value}
         onChange={onChangeInput}
         placeholder={placeholder}
         disabled={disabled}
       />
-      {error && <div>{error}</div>}
+      {error && <div className={styles.textError}>{error}</div>}
     </div>
   );
 };
 
 export default Input;
-
-// input.on('change', (event) => {event.target.value})
