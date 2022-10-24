@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shovgur/React_block.git/static/css/main.f7709d8c.css",
+    "main.js": "/Shovgur/React_block.git/static/js/main.84f9865a.js",
+    "index.html": "/Shovgur/React_block.git/index.html",
+    "main.f7709d8c.css.map": "/Shovgur/React_block.git/static/css/main.f7709d8c.css.map",
+    "main.84f9865a.js.map": "/Shovgur/React_block.git/static/js/main.84f9865a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7709d8c.css",
+    "static/js/main.84f9865a.js"
+  ]
+}
