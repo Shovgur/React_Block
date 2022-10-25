@@ -17,11 +17,11 @@ type InputProps = {
   disabled?: boolean;
   error?: string;
   title?: string;
-  type: InputTypes;
+  type?: InputTypes;
 };
 
 const Input: FC<InputProps> = (props) => {
-  const { value, onChange, placeholder, disabled, error, title } = props;
+  const { value, onChange, placeholder, disabled, error, title, } = props;
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
