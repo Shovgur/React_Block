@@ -11,14 +11,15 @@ type FormContainerProps = {
 
 const FormContainer: FC<FormContainerProps> = ({ title, children }) => {
   return (
-    <div className={classNames(styles.container)}>
-      <div>
-        <div className={styles.goBackButton}>{"Back to home"}</div>
-        {/*//ToDo - заменить на компонент Title*/}
-        <div>{title}</div>
+    <div className={styles.goBackButton}>
+      {"Back to home"}
+      {/*//ToDo - заменить на компонент Title*/}
+      <div className={styles.title}>{title}</div>
+
+      <div className={classNames(styles.container)}>
+        <div className={styles.formContainer}>{children}</div>
       </div>
-      <div className={styles.formContainer}>{children}</div>
     </div>
   );
 };
-export default FormContainer
+export default FormContainer;

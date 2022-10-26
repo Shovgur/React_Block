@@ -1,36 +1,33 @@
-.container {
-    flex: 1;
-    display: flex;
-    padding: 72px 400px;
-    flex-direction: column;
-    background-color: #F3F3F3;
-    gap: 72px;
-    height: 100%;
-}
-
 /*.darkContainer .goBackButton*/
 .goBackButton {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #313037;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #313037;
+}
+
+.title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
 }
 
 .darkContainer {
-    background: #313037;
-    color: white;
+  background: #313037;
+  color: white;
 }
 
 .darkContainer .goBackButton {
-    color: white;
+  color: white;
 }
-
 .formContainer {
-    border: 1px solid #8D8E97;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    width: 100%;
-    align-self: center;
-    max-width: 624px;
+  border: 1px solid #8d8e97;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  align-self: center;
+  width: 624px;
+  margin: 0 auto;
 }

@@ -6,6 +6,9 @@
   background-color: #F3F3F3;
   gap: 72px;
   height: 100%;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 0 10;
 }
 
 /*.darkContainer .goBackButton*/
