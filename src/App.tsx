@@ -1,14 +1,8 @@
-import React, {useEffect, useState} from "react";
-
 //@ts-ignore
 import styles from "./App.module.css";
+import React, {useEffect, useState} from "react";
 import { CardsListType } from "./Constants/@types";
-// import SignIn from "./Pages/SignIn";
-// import SignUp from "./Pages/SignUp";
-import Card from "./Components/Card";
-import { CardSize } from "./Components/Card/Card";
 import CardsList from "./Components/CardList";
-
 
 const MOCK_CARD = {
   id: 0,
@@ -43,8 +37,7 @@ const App = () => {
 
   return (
     cardsList && (
-      <div className={styles.container}>
-      {/*<Card card={MOCK_CARD} size={CardSize.Small} />*/}
+      <div className={styles.container}>      
       <CardsList cardsList={cardsList} />
     </div>
     )

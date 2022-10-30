@@ -1,10 +1,9 @@
-import React, { FC } from "react";
-
-import { CardsListType } from "../../Constants/@types";
-import Card from "../Card";
-import { CardSize } from "../Card/Card";
 //@ts-ignore
 import styles from "./CardsList.module.css";
+import React, { FC } from "react";
+import { CardSize } from "../Card/Card";
+import { CardsListType } from "../../Constants/@types";
+import Card from "../Card";
 
 type CardsListProps = {
   cardsList: CardsListType;
