@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import FormContainer from "../..//FormContainer";
+import FormContainer from "../../FormContainer";
 import Input from "../../Input";
 //@ts-ignore
 import styles from "./SignIn.module.css";
