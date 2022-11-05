@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Button, { ButtonTypes } from "../Button";
-import { BurgerClosedIcon,  } from "../../Assets/icons";
+import { BurgerClosedIcon } from "../../Assets/icons";
 import { CloseIcon } from "../../Assets/icons";
 import styles from "../Header/Header.module.css";
 import Menu from "./Menu";

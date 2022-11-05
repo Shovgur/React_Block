@@ -10,7 +10,7 @@ type FormContainerProps = {
 const FormContainer: FC<FormContainerProps> = ({ title, children }) => {
   return (
     <div className={styles.goBackButton}>
-      {"Back to home"}
+      <div className={styles.goBackButton}>Back to home</div>
       {/*//ToDo - заменить на компонент Title*/}
       <div className={styles.title}>{title}</div>
 
