@@ -1,6 +1,4 @@
 import React, { FC, ReactElement } from "react";
-
-//@ts-ignore
 import styles from "./FormContainer.module.css";
 import classNames from "classnames";
 

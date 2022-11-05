@@ -1,4 +1,4 @@
-//@ts-ignore
+
 import styles from "./SignUp.module.css";
 import React, { useState } from "react";
 import Button, { ButtonTypes } from "../../Button";

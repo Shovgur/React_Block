@@ -3,7 +3,6 @@ import React, { FC } from "react";
 import { CardsListType } from "../../Constants/@types";
 import Card from "../Card";
 import { CardSize } from "../Card/Card";
-//@ts-ignore
 import styles from "./CardsList.module.css";
 
 type CardsListProps = {
@@ -11,7 +10,6 @@ type CardsListProps = {
 };
 
 const CardsList: FC<CardsListProps> = ({ cardsList }) => {
-  
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
