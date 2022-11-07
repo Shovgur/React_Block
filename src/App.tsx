@@ -1,3 +1,4 @@
+ hw-6
 //@ts-ignore
 import styles from "./App.module.css";
 import React, {useEffect, useState} from "react";
@@ -28,19 +29,32 @@ const MOCK_CARDS_LIST = [
   MOCK_CARD,
 ];
 
-const App = () => {
-  const [cardsList, setCardsList] = useState<CardsListType | null>(null)
+import React, { useState } from "react";
 
-  useEffect(() => {
-    setCardsList(MOCK_CARDS_LIST)
-  }, [])
+import ThemeProvider from "./Context/Theme";
+import { Theme } from "./Constants/@types";
+import Router from "./Components/Pages/Router";
+ main
+
+const App = () => {
+  const [theme, setTheme] = useState(Theme.Light);
+
+  const onChangeTheme = (value: Theme) => {
+    setTheme(value);
+  };
 
   return (
+hw-6
     cardsList && (
       <div className={styles.container}>      
       <CardsList cardsList={cardsList} />
     </div>
     )
+
+    <ThemeProvider theme={theme} onChangeTheme={onChangeTheme}>
+      <Router />
+    </ThemeProvider>
+ main
   );
 };
 

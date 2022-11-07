@@ -4,13 +4,17 @@ import React, { FC } from "react";
 import { CardSize } from "../Card/Card";
 import { CardsListType } from "../../Constants/@types";
 import Card from "../Card";
+ hw-6
+
+import { CardSize } from "../Card/Card";
+import styles from "./CardsList.module.css";
+main
 
 type CardsListProps = {
   cardsList: CardsListType;
 };
 
 const CardsList: FC<CardsListProps> = ({ cardsList }) => {
-  
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
