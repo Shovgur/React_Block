@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://shovgur.github.io/React_block",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -48,5 +49,17 @@
   },
   "devDependencies": {
     "prettier": "^2.7.1"
+  },
+  "description": "Библиотека для более удобного использования классов: https://github.com/JedWatson/classnames#readme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shovgur/React_block.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shovgur/React_block/issues"
   }
 }

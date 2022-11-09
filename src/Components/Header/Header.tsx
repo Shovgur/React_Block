@@ -5,6 +5,7 @@ import { BurgerClosedIcon } from "../../Assets/icons";
 import { CloseIcon } from "../../Assets/icons";
 import styles from "../Header/Header.module.css";
 import Menu from "./Menu";
+import  UserName  from "../UserName/UserName"
 
 const Header = () => {
   const [isOpened, setOpened] = useState(false);
@@ -22,6 +23,7 @@ const Header = () => {
         className={styles.burgerButton}
       />
       {isOpened && <Menu />}
+      
     </div>
   );
 };

@@ -6,7 +6,7 @@ import Button, { ButtonTypes } from "../../Button";
 import styles from "./Menu.module.css";
 import { PathNames } from "../../Pages/Router/Router";
 import classNames from "classnames";
-import UserName from "../../UserName";
+import UserName from "../../UserName/UserName";
 
 const Menu = () => {
   const isLoggedIn = false;
