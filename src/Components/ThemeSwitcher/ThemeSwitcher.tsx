@@ -9,8 +9,7 @@ import { Theme } from "../../Constants/@types";
 const ThemeSwitcher = () => {
   const { theme, onChangeTheme } = useThemeContext();
 
-  const onThemeClick = (value: Theme)  => () => onChangeTheme(value) //пример использования каррирования
-
+  const onThemeClick = (value: Theme)  => () => onChangeTheme(value)
   return (
     <div className={styles.container}>
       <div
