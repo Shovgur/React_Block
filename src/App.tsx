@@ -5,7 +5,7 @@ import { Theme } from "./Constants/@types";
 import Router from "./Components/Pages/Router";
 
 const App = () => {
-  const [theme, setTheme] = useState(Theme.Light);
+  const [theme, setTheme] = useState(Theme.Dark);
 
   const onChangeTheme = (value: Theme) => {
     setTheme(value);

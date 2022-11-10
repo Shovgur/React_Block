@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 
-import ThemeSwitcher from "../../Pages/PageWrapper";
+import ThemeSwitcher from "../../ThemeSwitcher";
 import Button, { ButtonTypes } from "../../Button";
 import styles from "./Menu.module.css";
 import { PathNames } from "../../Pages/Router/Router";
 import classNames from "classnames";
-import UserName from "../../UserName/UserName";
+import UserName from "../../UserName";
 
 const Menu = () => {
   const isLoggedIn = false;
