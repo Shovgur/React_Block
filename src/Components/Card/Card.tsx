@@ -7,7 +7,6 @@ import {
     LikeIcon,
     SettingsIcon,
 } from "../../Assets/icons";
-//@ts-ignore
 import styles from "./Card.module.css";
 import classNames from "classnames";
 

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Button, { ButtonTypes } from "../Button";
 import { BurgerClosedIcon } from "../../Assets/icons";
 import { CloseIcon } from "../../Assets/icons";
+import { SearchIcon } from "../../Assets/icons/SearchIcon";
 import styles from "../Header/Header.module.css";
 import Menu from "./Menu";
 import  UserName  from "../UserName/UserName"
@@ -23,8 +24,14 @@ const Header = () => {
         className={styles.burgerButton}
       />
       {isOpened && <Menu />}
-      
+     <div className={styles.username}>
+      <UserName
+      username="Artem Malkin"/>
+      </div>
+      <SearchIcon  />
+
     </div>
+  
   );
 };
 
