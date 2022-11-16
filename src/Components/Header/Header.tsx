@@ -6,7 +6,7 @@ import { CloseIcon } from "../../Assets/icons";
 import { SearchIcon } from "../../Assets/icons/SearchIcon";
 import styles from "../Header/Header.module.css";
 import Menu from "./Menu";
-import  UserName  from "../UserName/UserName"
+import UserName from "../UserName/UserName";
 
 const Header = () => {
   const [isOpened, setOpened] = useState(false);
@@ -24,14 +24,15 @@ const Header = () => {
         className={styles.burgerButton}
       />
       {isOpened && <Menu />}
-     <div className={styles.username}>
-      <UserName
-      username="Artem Malkin"/>
+      <div className={styles.rightblock}>
+        <div className={styles.username}>
+          <UserName username="Artem Malkin" />
+        </div>
+        <div className={styles.searchblock}>
+        <SearchIcon />
+        </div>
       </div>
-      <SearchIcon  />
-
     </div>
-  
   );
 };
 

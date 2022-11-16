@@ -10,3 +10,18 @@
   display: flex;
   align-items: center;
 }
+
+.rightblock{
+display: flex;
+flex-direction: row-reverse;
+align-items: center;
+}
+
+.searchblock{
+  border: 1px solid #dadada;
+  width: 84px;
+  height: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
