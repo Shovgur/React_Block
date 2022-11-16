@@ -1,11 +1,10 @@
 import React, { FC } from "react";
-
 import { CardType } from "../../Constants/@types";
 import {
-    BookmarkIcon,
-    DislikeIcon,
-    LikeIcon,
-    SettingsIcon,
+  BookmarkIcon,
+  DislikeIcon,
+  LikeIcon,
+  SettingsIcon,
 } from "../../Assets/icons";
 import styles from "./Card.module.css";
 import classNames from "classnames";
