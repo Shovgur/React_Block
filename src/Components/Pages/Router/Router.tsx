@@ -21,7 +21,6 @@ export enum PathNames {
   RegistrationConfirmation = "/sign-up/confirm",
   RegistrationSuccess = "/sign-up/success",
   Search = "/search",
-  RegistrationConfrim = "RegistrationConfrim"
 }
 
 const RegistrationConfirmation = () => {

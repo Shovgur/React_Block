@@ -22,7 +22,7 @@ const SignIn = () => {
       registerUser({
         data: { username: password, password, email: login },
         callback: () => 
-        navigate(PathNames.RegistrationConfrim,{
+        navigate(PathNames.RegistrationConfirmation,{
           state: {email: login},
         })
       })
