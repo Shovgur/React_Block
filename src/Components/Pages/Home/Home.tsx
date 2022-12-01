@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setPosts, getPosts } from "../../../Redux/Reducer/postReducer";
 
 import CardsList from "../../CardList/CardsList";
- import SelectedPostModal from "./SelectedPostModal";
-// import TabsList from "../../Components/TabsList";
 import PostsSelectors from "../../../Redux/Selectors/postsSelector";
-import { Tabs } from "../../../Constants/@types";
+import { CardType, Tabs } from "../../../Constants/@types";
 import styles from "./Home.module.css";
 import TabsList from "../../TabsList";
 
@@ -123,6 +123,13 @@ const MOCK_CARDS_LIST = [
 ];
 
 const Home = () => {
+  const [cardsList, setCardsList] = useState<Array<CardType> | null>(null);
+  const dispatch = useDispatch();
+  const allPosts = useSelector(PostsSelectors.getAllPosts);
+  useEffect(() => {
+    dispatch(getPosts());
+  }, []);
+
   const [activeTab, setActiveTab] = useState(Tabs.All);
   const onTabClick = (tab: Tabs) => {
     setActiveTab(tab);
@@ -137,20 +144,14 @@ const Home = () => {
     } else if (activeTab === Tabs.Favourites) {
       return savedPosts;
     } else {
-      return MOCK_CARDS_LIST;
+      return allPosts;
     }
   };
-
-  useEffect(() => {
-    //ToDo: вместо того экшена, который засовывает посты мокнутые вызвать тот, который их получает из сервера
-  }, [])
-
   return (
     <div className={styles.container}>
       <div className={styles.pageTitle}>{"Blog"}</div>
       <TabsList activeTab={activeTab} onSelectTab={onTabClick} />
       <CardsList cardsList={cardsArray()} />
-      <SelectedPostModal />
     </div>
   );
 };

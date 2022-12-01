@@ -6,20 +6,26 @@ import {
   SetLikeStatusPayload,
 } from "../../Constants/@types";
 
-type PostsReducerState = {
+type PostReducerState = {
   selectedPost: CardType | null;
-  isSelectedPostModalOpened: boolean;
+  isSelectedPostModalIsOpened: boolean;
+  selectedImage: string;
+  isSelectedImageModalIsOpened: boolean;
   likedPosts: CardsListType;
   dislikedPosts: CardsListType;
   savedPosts: CardsListType;
+  allPosts: CardsListType;
 };
 
-const initialState: PostsReducerState = {
+const initialState: PostReducerState = {
   selectedPost: null,
-  isSelectedPostModalOpened: false,
+  isSelectedPostModalIsOpened: false,
   likedPosts: [],
   dislikedPosts: [],
   savedPosts: [],
+  selectedImage: "",
+  isSelectedImageModalIsOpened: false,
+  allPosts: [],
 };
 
 //если кладете дальше объект - исходное значение null
@@ -34,14 +40,26 @@ const postsSlice = createSlice({
   reducers: {
     setSelectedPost: (state, action: PayloadAction<CardType | null>) => {
       state.selectedPost = action.payload;
-      state.isSelectedPostModalOpened = true;
+      state.isSelectedPostModalIsOpened = true;
     },
     setSelectedPostModalVisible: (state, action: PayloadAction<boolean>) => {
-      state.isSelectedPostModalOpened = action.payload;
+      state.isSelectedPostModalIsOpened = action.payload;
       if (!action.payload) {
         state.selectedPost = null;
       }
     },
+
+    setSelectedImage: (state, action: PayloadAction<string>) => {
+      state.selectedImage = action.payload;
+      state.isSelectedImageModalIsOpened = true;
+    },
+    setSelectedImageVisible: (state, action: PayloadAction<boolean>) => {
+      state.isSelectedImageModalIsOpened = action.payload;
+      if (!action.payload) {
+        state.selectedImage = "";
+      }
+    },
+
     setLikeStatus: (state, action: PayloadAction<SetLikeStatusPayload>) => {
       const { card, likeStatus } = action.payload;
 
@@ -67,35 +85,33 @@ const postsSlice = createSlice({
       if (secondaryIndex > -1) {
         state[secondaryArrayKey].splice(secondaryIndex, 1);
       }
-      // верхний if else подробно описан ниже
-      // if (likeStatus === LikeStatus.Like) {
-      //   // if LikeStatus === 'LIKE'
-      //   if (likedIndex === -1) { // Здесь определяем, ставим или снимаем лайк с поста
-      //     state.likedPosts.push(card);
-      //   } else {
-      //     state.likedPosts.splice(likedIndex, 1);
-      //   }
-      //   if (dislikedIndex > -1) { // Здесь определяем, ставили ли мы на этот пост дизлайк
-      //     state.dislikedPosts.splice(dislikedIndex, 1);
-      //   }
-      // } else {
-      //   // if LikeStatus === 'DISLIKE'
-      //   if (dislikedIndex === -1) { // Здесь определяем, ставим или снимаем дизлайк с поста
-      //     state.dislikedPosts.push(card);
-      //   } else {
-      //     state.dislikedPosts.splice(dislikedIndex, 1);
-      //   }
-      //
-      //   if (likedIndex > -1) {  // Здесь определяем, ставили ли мы на этот пост лайк
-      //     state.likedPosts.splice(likedIndex, 1);
-      //   }
-      // }
+    },
+    setSavedPosts: (state, action: PayloadAction<CardType>) => {
+      const { ...card } = action.payload;
+      const savedPostsIndex = state.savedPosts.findIndex(
+        (post) => post.id === card.id
+      );
+      savedPostsIndex === -1
+        ? state.savedPosts.push(card)
+        : state.savedPosts.splice(savedPostsIndex, 1);
+    },
+    getPosts: (state, action: PayloadAction<undefined>) => {},
+    setPosts: (state, action: PayloadAction<CardsListType>) => {
+      state.allPosts = action.payload;
     },
   },
 });
 
-export const { setSelectedPost, setSelectedPostModalVisible, setLikeStatus } =
-  postsSlice.actions;
+export const {
+  setSelectedPost,
+  setSelectedPostModalVisible,
+  setSelectedImage,
+  setSelectedImageVisible,
+  setLikeStatus,
+  setSavedPosts,
+  getPosts,
+  setPosts,
+} = postsSlice.actions;
 
 const postsReducer = postsSlice.reducer;
 export default postsReducer;
