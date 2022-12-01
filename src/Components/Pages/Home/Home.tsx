@@ -7,6 +7,7 @@ import CardsList from "../../CardList/CardsList";
 import PostsSelectors from "../../../Redux/Selectors/postsSelector";
 import { Tabs } from "../../../Constants/@types";
 import styles from "./Home.module.css";
+import TabsList from "../../TabsList";
 
 const MOCK_CARDS_LIST = [
   {
