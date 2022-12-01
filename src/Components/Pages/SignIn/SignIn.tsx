@@ -4,6 +4,8 @@ import FormContainer from "../../FormContainer";
 import Input from "../../Input";
 import styles from "./SignIn.module.css";
 import Button, { ButtonTypes } from "../../Button";
+import { NavLink } from "react-router-dom";
+import { PathNames } from "../Router/Router";
 
 const SignIn = () => {
   const [login, setLogin] = useState("");
@@ -34,7 +36,8 @@ const SignIn = () => {
           className={styles.button}
         />
         <div className={styles.signUpRedirectContainer}>
-          {"Don’t have an account?"} <span>{"Sign Up"}</span>
+          {"Don’t have an account?"}
+          <NavLink to={PathNames.SignUp} className={styles.redirectButton}>{"Sign Up"}</NavLink>
         </div>
       </>
     </FormContainer>

@@ -12,3 +12,8 @@
     margin-top: 24px;
     align-self: center;
 }
+
+.redirectButton {
+    color: #2231AA;
+    text-decoration: none;
+}

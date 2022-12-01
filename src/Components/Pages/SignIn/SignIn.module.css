@@ -10,7 +10,14 @@
 .button {
     margin-top: 48px;
     text-align: center;
+    text-decoration: none;
 }
+
+.redirectButton {
+    color: #2231AA;
+    text-decoration: none;
+}
+
 .signUpRedirectContainer {
     margin-top: 24px;
     align-self: center;

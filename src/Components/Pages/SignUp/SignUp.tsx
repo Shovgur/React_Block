@@ -1,15 +1,33 @@
-
 import styles from "./SignUp.module.css";
 import React, { useState } from "react";
 import Button, { ButtonTypes } from "../../Button";
 import FormContainer from "../../FormContainer";
 import Input from "../../Input";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../../Redux/Reducer/authReducer";
+import { PathNames } from "../Router/Router";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const SignIn = () => {
   const [name, setName] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const onSingUp = () => {
+    dispatch(
+      registerUser({
+        data: { username: password, password, email: login },
+        callback: () => 
+        navigate(PathNames.RegistrationConfrim,{
+          state: {email: login},
+        })
+      })
+    );
+  };
 
   return (
     <FormContainer title={"Sign Up"}>
@@ -40,14 +58,19 @@ const SignIn = () => {
             onChange={(value: string) => setPasswordConfirmation(value)}
           />
         </div>
+
         <Button
           title={"Sign Up"}
           type={ButtonTypes.Primary}
-          onClick={() => {}}
+          onClick={onSingUp}
           className={styles.button}
         />
+
         <div className={styles.signUpRedirectContainer}>
-          {"Already have an account?"} <span>{"Sign In"}</span>
+          {"Already have an account?"}
+          <NavLink to={PathNames.SignIn} className={styles.redirectButton}>
+            {"Sign Up"}
+          </NavLink>
         </div>
       </>
     </FormContainer>
