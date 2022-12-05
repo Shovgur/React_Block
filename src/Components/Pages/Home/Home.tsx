@@ -147,6 +147,7 @@ const Home = () => {
       return allPosts;
     }
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.pageTitle}>{"Blog"}</div>
