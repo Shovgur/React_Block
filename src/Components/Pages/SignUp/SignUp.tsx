@@ -69,7 +69,7 @@ const SignIn = () => {
         <div className={styles.signUpRedirectContainer}>
           {"Already have an account?"}
           <NavLink to={PathNames.SignIn} className={styles.redirectButton}>
-            {"Sign Up"}
+            {"Sign In"}
           </NavLink>
         </div>
       </>
