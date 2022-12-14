@@ -1,27 +1,33 @@
 .container {
   display: flex;
+  justify-content: space-between;
   position: relative;
   height: 84px;
-  background-color: #2231aa;
-  justify-content: space-between;
-  /* align-items: center; */
+  background: #2231aa;
+  margin-bottom: 72px;
 }
 .burgerButton {
-  display: flex;
-  align-items: center;
+  padding: 30px;
+}
+.searchButton {
+  padding: 30px;
+  border-right: 1px solid #5360cd;
+  border-left: 1px solid #5360cd;
 }
 
-.rightblock{
-display: flex;
-flex-direction: row-reverse;
-align-items: center;
+.searchButtons {
+  display: flex;
 }
 
-.searchblock{
-  border: 1px solid #dadada;
-  width: 84px;
-  height: 83px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.inputContainer {
+  width: 100%;
+}
+.customInput {
+  background: #5360cd ;
+  font-weight: 400 ;
+  font-size: 16px ;
+  line-height: 24px ;
+  color: rgba(255, 255, 255, 0.5) ;
+  padding: 30px ;
+  border: none;
 }

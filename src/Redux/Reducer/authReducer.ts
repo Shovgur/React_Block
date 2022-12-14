@@ -1,16 +1,42 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { registerUserPayload } from "../Types/auth";
+import {
+  ActivateUserPayload,
+  RegisterUserPayload,
+  SignInUserPayload,
+} from "../Types/auth";
+import { ACCESS_TOKEN_KEY } from "../../Constants/const";
 
-const INITIAL_STATE = {};
+const initialState = {
+  isLoggedIn: !!localStorage.getItem(ACCESS_TOKEN_KEY),
+  userName: "",
+};
 
 const authSlice = createSlice({
-  name: "auth",
-  initialState: INITIAL_STATE,
+  name: "authReducer",
+  initialState,
   reducers: {
-    registerUser: (state, action: PayloadAction<registerUserPayload>) => {},
+    registerUser: (state, action: PayloadAction<RegisterUserPayload>) => {},
+    activateUser: (state, action: PayloadAction<ActivateUserPayload>) => {},
+    signInUser: (state, action: PayloadAction<SignInUserPayload>) => {},
+    setLoggedIn: (state, action: PayloadAction<boolean>) => {
+      state.isLoggedIn = action.payload;
+    },
+    getUserName: (state, action: PayloadAction<undefined>) => {},
+    setUserName: (state, action: PayloadAction<any>) => {
+      state.userName = action.payload;
+    },
+    logoutUser: (state, action: PayloadAction<undefined>) => {},
   },
 });
+export const {
+  registerUser,
+  activateUser,
+  signInUser,
+  setLoggedIn,
+  getUserName,
+  setUserName,
+  logoutUser,
+} = authSlice.actions;
+const authReducer = authSlice.reducer;
 
-export const { registerUser } = authSlice.actions;
-
-export default authSlice.reducer;
+export default authReducer;

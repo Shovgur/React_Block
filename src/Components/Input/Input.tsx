@@ -1,14 +1,9 @@
 import React, { FC, ChangeEvent } from "react";
 import classNames from "classnames";
-//@ts-ignore
 import styles from "./Input.module.css";
 import { type } from "os";
-
-export enum InputTypes {
-  Default = "default",
-  Disable = "disable",
-  Error = "error",
-}
+import  { useThemeContext } from "../../Context/Theme";
+import { Theme } from "../../Constants/@types";
 
 type InputProps = {
   value: string;
@@ -17,28 +12,41 @@ type InputProps = {
   disabled?: boolean;
   error?: string;
   title?: string;
-  type?: InputTypes;
+  type?: string;
+  className?: string;
 };
 
 const Input: FC<InputProps> = (props) => {
-  const { value, onChange, placeholder, disabled, error, title, } = props;
+  const { value, onChange, placeholder, disabled, error, title, className, type } =
+    props;
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
 
+  const { theme } = useThemeContext()
+
   return (
-    <div>
-      {title && <div className={styles.title}>{title}</div>}
-      <input
-        className={classNames(styles.input, { [styles.inputError]: error })}
-        value={value}
-        onChange={onChangeInput}
-        placeholder={placeholder}
-        disabled={disabled}
-      />
-      {error && <div className={styles.textError}>{error}</div>}
-    </div>
-  );
+    <div className={styles.container}>
+    {title && (
+      <div
+        className={classNames(styles.title, {
+          [styles.darkContainer]: theme === Theme.Dark,
+        })}
+      >
+        {title}
+      </div>
+    )}
+    <input
+      className={classNames(className, styles.input)}
+      value={value}
+      onChange={onChangeInput}
+      placeholder={placeholder}
+      disabled={disabled}
+      type={type}
+    />
+    {error && <div className={styles.error}>{error}</div>}
+  </div>
+);
 };
 
 export default Input;
