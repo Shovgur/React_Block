@@ -1,7 +1,6 @@
 import React, { FC, ChangeEvent } from "react";
 import classNames from "classnames";
 import styles from "./Input.module.css";
-import { type } from "os";
 import  { useThemeContext } from "../../Context/Theme";
 import { Theme } from "../../Constants/@types";
 

@@ -20,7 +20,7 @@ export type RegisterUserData = {
   export type SignInUserData = {
     email: string;
     password: string;
-  };
+  }; 
   
   export type SignInUserPayload = {
     data: SignInUserData;

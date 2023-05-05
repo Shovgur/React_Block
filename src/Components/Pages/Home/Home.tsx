@@ -143,7 +143,8 @@ const Home = () => {
 
 
   return (
-    <div className={styles.container}>
+    <div 
+    className={styles.container}>
       <div className={styles.pageTitle}>{"Blog"}</div>
       <TabsList activeTab={activeTab} onSelectTab={onTabClick} />
       <CardsList cardsList={cardsArray()} />
